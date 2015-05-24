@@ -1,0 +1,35 @@
+JbNahan\PsBundle\Entity\Album:
+    type: entity
+    table: ps_album
+    repositoryClass: JbNahan\PsBundle\Repository\AlbumRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        createdAt:
+            type: datetime
+        updatedAt:
+            type: datetime
+        deletedAt:
+            type: datetime
+    manyToOne:
+        user:
+            targetEntity: User
+            inversedBy: albums
+            joinColumns:
+                user:
+                    referencedColumnName: id
+    oneToMany:
+        photos:
+            targetEntity: Photos
+            mappedBy: album
+        shares:
+            targetEntity: Share
+            mappedBy: album
+    lifecycleCallbacks: {  }

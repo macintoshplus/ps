@@ -1,0 +1,35 @@
+JbNahan\PsBundle\Entity\Share:
+    type: entity
+    table: ps_share
+    repositoryClass: JbNahan\PsBundle\Repository\ShareRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        dest:
+            type: string
+            length: 255
+        autoDeleteAt:
+            type: datetime
+        viewTime:
+            type: integer
+        viewMaxCount:
+            type: integer
+        valitityTime:
+            type: integer
+        key:
+            type: string
+            length: 255
+        viewCount:
+            type: integer
+    manyToOne:
+        album:
+            targetEntity: Album
+            inversedBy: shares
+            joinColumns:
+                album:
+                    referencedColumnName: id
+    lifecycleCallbacks: {  }

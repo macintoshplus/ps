@@ -1,0 +1,28 @@
+JbNahan\PsBundle\Entity\Photo:
+    type: entity
+    table: ps_photo
+    repositoryClass: JbNahan\PsBundle\Repository\PhotoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        uploadedAt:
+            type: datetime
+        deletedAt:
+            type: datetime
+        viewcount:
+            type: integer
+    manyToOne:
+        album:
+            targetEntity: Album
+            inversedBy: photos
+            joinColumns:
+                album:
+                    referencedColumnName: id
+    lifecycleCallbacks: {  }

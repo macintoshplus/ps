@@ -1,0 +1,30 @@
+JbNahan\PsBundle\Entity\Mail:
+    type: entity
+    table: ps_mail
+    repositoryClass: JbNahan\PsBundle\Repository\MailRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        subject:
+            type: string
+            length: 255
+        body:
+            type: text
+        createdAt:
+            type: datetime
+        sendAt:
+            type: datetime
+        openAt:
+            type: datetime
+    manyToOne:
+        user:
+            targetEntity: User
+            inversedBy: mails
+            joinColumns:
+                user:
+                    referencedColumnName: id
+    lifecycleCallbacks: {  }

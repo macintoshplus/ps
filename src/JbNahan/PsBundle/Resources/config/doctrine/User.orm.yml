@@ -1,0 +1,18 @@
+JbNahan\PsBundle\Entity\User:
+    type: entity
+    table: ps_fos_user
+    id:
+        id:
+            type: integer
+            nullable: false
+            id: true
+            column: id
+            generator:
+                strategy: IDENTITY
+    oneToMany:
+        albums:
+            targetEntity: Album
+            mappedBy: user
+        mails:
+            targetEntity: Mail
+            mappedBy: user
