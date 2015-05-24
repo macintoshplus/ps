@@ -1,0 +1,5 @@
+jms_security_extra:
+    voters:
+        disable_authenticated: false
+        disable_role:          false
+        disable_acl:           false
