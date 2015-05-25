@@ -2,6 +2,10 @@ JbNahan\PsBundle\Entity\Album:
     type: entity
     table: ps_album
     repositoryClass: JbNahan\PsBundle\Repository\AlbumRepository
+    gedmo:
+        soft_deleteable:
+            field_name: deletedAt
+            time_aware: false
     id:
         id:
             type: integer
@@ -16,8 +20,10 @@ JbNahan\PsBundle\Entity\Album:
             type: datetime
         updatedAt:
             type: datetime
+            nullable: true
         deletedAt:
             type: datetime
+            nullable: true
     manyToOne:
         user:
             targetEntity: User

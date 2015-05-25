@@ -18,8 +18,10 @@ JbNahan\PsBundle\Entity\Mail:
             type: datetime
         sendAt:
             type: datetime
+            nullable: true
         openAt:
             type: datetime
+            nullable: true
     manyToOne:
         user:
             targetEntity: User

@@ -2,6 +2,10 @@ JbNahan\PsBundle\Entity\Share:
     type: entity
     table: ps_share
     repositoryClass: JbNahan\PsBundle\Repository\ShareRepository
+    gedmo:
+        soft_deleteable:
+            field_name: deletedAt
+            time_aware: false
     id:
         id:
             type: integer
@@ -14,17 +18,25 @@ JbNahan\PsBundle\Entity\Share:
             length: 255
         autoDeleteAt:
             type: datetime
+            nullable: true
         viewTime:
             type: integer
+            nullable: true
         viewMaxCount:
             type: integer
+            nullable: true
         valitityTime:
             type: integer
+            nullable: true
         key:
             type: string
             length: 255
         viewCount:
             type: integer
+            nullable: true
+        deletedAt:
+            type: datetime
+            nullable: true
     manyToOne:
         album:
             targetEntity: Album

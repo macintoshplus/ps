@@ -2,6 +2,10 @@ JbNahan\PsBundle\Entity\Photo:
     type: entity
     table: ps_photo
     repositoryClass: JbNahan\PsBundle\Repository\PhotoRepository
+    gedmo:
+        soft_deleteable:
+            field_name: deletedAt
+            time_aware: false
     id:
         id:
             type: integer
@@ -16,8 +20,10 @@ JbNahan\PsBundle\Entity\Photo:
             type: datetime
         deletedAt:
             type: datetime
+            nullable: true
         viewcount:
             type: integer
+            nullable: true
     manyToOne:
         album:
             targetEntity: Album

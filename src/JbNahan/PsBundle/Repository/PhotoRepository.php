@@ -1,6 +1,6 @@
 <?php
 
-namespace JbNahan\PsBundle\Entity;
+namespace JbNahan\PsBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 
