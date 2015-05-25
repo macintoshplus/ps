@@ -20,8 +20,8 @@ class DefaultController extends Controller
      * @Method("GET")
      * @#Template()
      */
-    public function indexAction($name)
+    public function indexAction()
     {
-        return $this->render('JbNahanPsBundle:Default:index.html.twig', array('name' => $name));
+        return $this->render('JbNahanPsBundle:Default:index.html.twig', array('name' => 'jb'));
     }
 }

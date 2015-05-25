@@ -136,4 +136,32 @@ class Photo
     {
         return $this->viewcount;
     }
+    /**
+     * @var \JbNahan\PsBundle\Entity\Album
+     */
+    private $album;
+
+
+    /**
+     * Set album
+     *
+     * @param \JbNahan\PsBundle\Entity\Album $album
+     * @return Photo
+     */
+    public function setAlbum(\JbNahan\PsBundle\Entity\Album $album = null)
+    {
+        $this->album = $album;
+
+        return $this;
+    }
+
+    /**
+     * Get album
+     *
+     * @return \JbNahan\PsBundle\Entity\Album 
+     */
+    public function getAlbum()
+    {
+        return $this->album;
+    }
 }

@@ -164,4 +164,32 @@ class Mail
     {
         return $this->openAt;
     }
+    /**
+     * @var \JbNahan\PsBundle\Entity\User
+     */
+    private $user;
+
+
+    /**
+     * Set user
+     *
+     * @param \JbNahan\PsBundle\Entity\User $user
+     * @return Mail
+     */
+    public function setUser(\JbNahan\PsBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \JbNahan\PsBundle\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
 }

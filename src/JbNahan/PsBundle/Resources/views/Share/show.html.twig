@@ -1,0 +1,56 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Share</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Dest</th>
+                <td>{{ entity.dest }}</td>
+            </tr>
+            <tr>
+                <th>Autodeleteat</th>
+                <td>{{ entity.autoDeleteAt|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Viewtime</th>
+                <td>{{ entity.viewTime }}</td>
+            </tr>
+            <tr>
+                <th>Viewmaxcount</th>
+                <td>{{ entity.viewMaxCount }}</td>
+            </tr>
+            <tr>
+                <th>Valititytime</th>
+                <td>{{ entity.valitityTime }}</td>
+            </tr>
+            <tr>
+                <th>Key</th>
+                <td>{{ entity.key }}</td>
+            </tr>
+            <tr>
+                <th>Viewcount</th>
+                <td>{{ entity.viewCount }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('share') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('share_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

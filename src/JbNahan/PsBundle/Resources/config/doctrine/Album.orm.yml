@@ -27,7 +27,7 @@ JbNahan\PsBundle\Entity\Album:
                     referencedColumnName: id
     oneToMany:
         photos:
-            targetEntity: Photos
+            targetEntity: Photo
             mappedBy: album
         shares:
             targetEntity: Share

@@ -1,5 +1,5 @@
 <?php
-namespace StatusBundle\Entity;
+namespace JbNahan\PsBundle\Entity;
 
 use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
@@ -9,33 +9,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class User extends BaseUser
 {
-
-    public function __construct()
-    {
-        parent::__construct();
-        // your own logic
-    }
-
     /**
      * @var integer
      */
     protected $id;
-
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-
-    /**
-     * @var integer
-     */
-    private $id;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -52,6 +29,7 @@ class User extends BaseUser
      */
     public function __construct()
     {
+        parent::__construct();
         $this->albums = new \Doctrine\Common\Collections\ArrayCollection();
         $this->mails = new \Doctrine\Common\Collections\ArrayCollection();
     }

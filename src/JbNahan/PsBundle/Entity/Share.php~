@@ -164,4 +164,88 @@ class Share
     {
         return $this->valitityTime;
     }
+    /**
+     * @var string
+     */
+    private $key;
+
+    /**
+     * @var integer
+     */
+    private $viewCount;
+
+    /**
+     * @var \JbNahan\PsBundle\Entity\Album
+     */
+    private $album;
+
+
+    /**
+     * Set key
+     *
+     * @param string $key
+     * @return Share
+     */
+    public function setKey($key)
+    {
+        $this->key = $key;
+
+        return $this;
+    }
+
+    /**
+     * Get key
+     *
+     * @return string 
+     */
+    public function getKey()
+    {
+        return $this->key;
+    }
+
+    /**
+     * Set viewCount
+     *
+     * @param integer $viewCount
+     * @return Share
+     */
+    public function setViewCount($viewCount)
+    {
+        $this->viewCount = $viewCount;
+
+        return $this;
+    }
+
+    /**
+     * Get viewCount
+     *
+     * @return integer 
+     */
+    public function getViewCount()
+    {
+        return $this->viewCount;
+    }
+
+    /**
+     * Set album
+     *
+     * @param \JbNahan\PsBundle\Entity\Album $album
+     * @return Share
+     */
+    public function setAlbum(\JbNahan\PsBundle\Entity\Album $album = null)
+    {
+        $this->album = $album;
+
+        return $this;
+    }
+
+    /**
+     * Get album
+     *
+     * @return \JbNahan\PsBundle\Entity\Album 
+     */
+    public function getAlbum()
+    {
+        return $this->album;
+    }
 }

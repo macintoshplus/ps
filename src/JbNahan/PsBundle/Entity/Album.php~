@@ -136,4 +136,116 @@ class Album
     {
         return $this->deletedAt;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $photos;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $shares;
+
+    /**
+     * @var \JbNahan\PsBundle\Entity\User
+     */
+    private $user;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->photos = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->shares = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add photos
+     *
+     * @param \JbNahan\PsBundle\Entity\Photos $photos
+     * @return Album
+     */
+    public function addPhoto(\JbNahan\PsBundle\Entity\Photos $photos)
+    {
+        $this->photos[] = $photos;
+
+        return $this;
+    }
+
+    /**
+     * Remove photos
+     *
+     * @param \JbNahan\PsBundle\Entity\Photos $photos
+     */
+    public function removePhoto(\JbNahan\PsBundle\Entity\Photos $photos)
+    {
+        $this->photos->removeElement($photos);
+    }
+
+    /**
+     * Get photos
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPhotos()
+    {
+        return $this->photos;
+    }
+
+    /**
+     * Add shares
+     *
+     * @param \JbNahan\PsBundle\Entity\Share $shares
+     * @return Album
+     */
+    public function addShare(\JbNahan\PsBundle\Entity\Share $shares)
+    {
+        $this->shares[] = $shares;
+
+        return $this;
+    }
+
+    /**
+     * Remove shares
+     *
+     * @param \JbNahan\PsBundle\Entity\Share $shares
+     */
+    public function removeShare(\JbNahan\PsBundle\Entity\Share $shares)
+    {
+        $this->shares->removeElement($shares);
+    }
+
+    /**
+     * Get shares
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getShares()
+    {
+        return $this->shares;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \JbNahan\PsBundle\Entity\User $user
+     * @return Album
+     */
+    public function setUser(\JbNahan\PsBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \JbNahan\PsBundle\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
 }
