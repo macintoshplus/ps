@@ -5,9 +5,20 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/unsemantic-grid-responsive.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        <div class="gid-container">
+            <div class="grid-100 right header">{% if is_granted('IS_AUTHENTICATED_FULLY') %} <a href="{{ path('album') }}">Albums</a>  | <a href="{{ path('fos_user_profile_show') }}">Profile</a> | <a href="{{ path('fos_user_security_logout') }}">Deconnexion</a>{% else %}<a href="{{ path('fos_user_security_login') }}">Connexion</a> | <a href="{{ path('fos_user_registration_register') }}">Enregistrement</a>{% endif %}</div>
+        
+            <div class="grid-100">
+                    {% block body %}{% endblock %}
+            </div>
+        </div>
+
+        {% block javascripts %}
+        <script src="{{ asset('js/jquery.min.js') }}"></script>
+        {% endblock %}
     </body>
 </html>
